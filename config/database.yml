@@ -1,0 +1,17 @@
+default: &default
+  adapter: mysql2
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  host: localhost
+  username: root
+
+development:
+  <<: *default
+  database: hca_coding_development
+
+test:
+  <<: *default
+  database: hca_coding_test
+
+production:
+  <<: *default
+  database: hca_coding_production
