@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 20170904050320) do
     t.bigint "patient_id"
     t.datetime "date_of_service"
     t.string "reason_for_visit"
+    t.boolean "billed", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["patient_id"], name: "index_encounters_on_patient_id"

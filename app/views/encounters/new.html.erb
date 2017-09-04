@@ -1,0 +1,22 @@
+<div id="encounters">
+  <%= form_for @encounter do |encounter| %>
+    <%= encounter.fields_for :patient do |patient| %>
+      Patient Account:
+      <%= patient.text_field :account_number %><br />
+
+      First Name:
+      <%= patient.text_field :first_name %><br />
+
+      Last Name:
+      <%= patient.text_field :last_name %><br />
+    <% end %>
+    
+    Date of Service:
+    <%= encounter.date_field :date_of_service %><br />
+
+    Reason for Visit:
+    <%= encounter.text_field :reason_for_visit %><br />
+
+    <%= encounter.submit "Save" %>
+  <% end %>
+</div>
